@@ -1,0 +1,23 @@
+$ python stak_factory_guarded.py
+
+STAK factory run — daily ceiling $0.50
+
+  caption 'staky stacks':         +$0.0077   running $0.0077
+  caption 'staky v staky (duel)': +$0.0077   running $0.0155
+  ... re-enqueue bug repeats the duel caption 62 more times ...
+  caption 'staky v staky (duel)': +$0.0077   running $0.4960
+
+BUDGET EXCEEDED — call blocked
+  spent so far: $0.496000  |  ceiling: $0.500000
+  The next call would cross your budget; floe-guard stopped your agent before it ran.
+
+[A] KILL SWITCH: factory halted before caption #65. Spent $0.4960 of $0.50.
+
+[B] BLIND SPOT: trying to bill the actual biggest cost line (video)...
+    floe-guard can't price 'veo-3.1' (fails closed).
+    that ~$6.00 clip rode OUTSIDE the ceiling, and video is most of my real spend, not tokens.
+
+--------------------------------------------------------------------------
+Note: model calls are stubbed (fixed token usage, no network). Costs are priced
+offline from floe-guard's bundled LiteLLM cost map, identical to the repo's
+runaway_loop demo. Reproducible with: pip install floe-guard && python stak_factory_guarded.py
